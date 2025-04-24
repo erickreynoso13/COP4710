@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>List Users</title></head>
+<body>
+    <h1>List of users</h1>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>email</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user['name'] }}</td>
+            <td>{{ user['age'] }}</td>
+            <td>{{ user['email'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/">Go back to home page</a><br>
+    <a href="/logout">Log Out</a><br>
+</body>
+</html>
