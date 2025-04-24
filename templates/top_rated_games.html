@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Top Rated Games</title></head>
+<body>
+    <h1>Top Rated Games </h1>
+
+    {% if games %}
+        <table border="1">
+            <tr>
+                <th>Game</th>
+                <th>Average Rating</th>
+            </tr>
+            {% for game in games %}
+            <tr>
+                <td>{{ game['name_of_game'] }}</td>
+                <td>{{ game['avg_rating'] | round(2) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No games have an average rating of 4 or higher.</p>
+    {% endif %}
+
+    <a href="/">Go back to home</a>
+</body>
+</html>
