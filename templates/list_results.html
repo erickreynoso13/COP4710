@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of games</title>
+</head>
+<body>
+    <h1>List of Games</h1>
+
+    {% if results %}
+        <table border="1">
+            <tr>
+                <th>Entry ID</th>
+                <th>Name of Game</th>
+                <th>Year</th>
+                <th>Genre</th>
+                <th>Version</th>
+                <th>Age Restriction</th>
+                <th>Price ($)</th>
+                <th>DID</th>
+                <th>Rating</th>
+            </tr>
+            {% for result in results %}
+            <tr>
+                <td>{{ result['entry_id'] }}</td>
+                <td>{{ result['name_of_game'] }}</td>
+                <td>{{ result['year'] }}</td>
+                <td>{{ result['genre'] }}</td>
+                <td>{{ result['version'] }}</td>
+                <td>{{ result['age_restriction'] }}</td>
+                <td>{{ result['price'] }}</td>
+                <td>{{ result['did'] }}</td>
+                <td>{{ result['rate'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No contest entries available.</p>
+    {% endif %}
+
+    <a href="/">Go back to home page</a><br>
+    <a href="/logout">Log Out</a><br>
+</body>
+</html>
